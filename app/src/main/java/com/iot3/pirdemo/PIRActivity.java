@@ -9,6 +9,26 @@ import android.widget.TextView;
 
 import net.calit2.mooc.iot_db410c.db410c_gpiolib.GpioProcessor;
 
+/*
+ *  Code created by Susan Marosek
+ *  Simple Android code to demonstrate Passive Infrared sensor for UCSD Course:
+ *      IoT - Sensing and Actuation from Devices
+ *      Module 6, Lesson 2.
+ *
+ * This code creates a simple UI to allow the user to turn on / off the PIR sensor.
+ * GPIO 34 of the DragonBoard is set to control the the PIR sensor's VCC (power).
+ *
+ * GPIO 34 output goes through the Op-Amp that was created in an earlier assignment in this course.
+ * An indicator LED is connected to the Op-Amp's output (and VCC). Once the sensor is turned
+ * on via the UI, PIR's power and the power indicator LED will also turn on.
+ * The output pin of the PIR sensor is connected to a separate LED. If the sensor is turned on,
+ * movement in front of the PIR sensor should cause the second LED to turn on. When the motion has
+ * stopped, this LED will turn off.
+ *
+ * NOTE: for me, the motion detection was a little sketchy. Sometimes it took a few seconds for
+ * my mothion indicator LED to turn on.
+ */
+
 public class PIRActivity extends Activity
 {
     static final String tag = "IOT3";
